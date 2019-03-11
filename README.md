@@ -104,10 +104,9 @@ On Success
      data: [{ … }]
 }
 ```
-### API Endpoint Specification
-```
-Response from the API endpoints format. 
-```
+
+## API Endpoint Specification
+
 
 #### Endpoint: POST /auth/signup
 
