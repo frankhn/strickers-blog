@@ -6,8 +6,8 @@
 
 The purpose of this document is to provide an overview of the project, expected product features and the presentation of the final product.
 
-##Vision
-Make easy sharing of the right information and content with respect to readers by age thus providing a security shield for readers.
+## Vision
+Make easy sharing of  information, knowledge  and experience  by welcoming and aspiring young writers to write on any subject they want and reach out to  many readers across the globe.
 
 ## Features
 Reader and author can create an account.
@@ -104,7 +104,10 @@ On Success
      data: [{ … }]
 }
 ```
-## API Endpoint Specification
+### API Endpoint Specification
+```
+Response from the API endpoints format. 
+```
 
 #### Endpoint: POST /auth/signup
 
@@ -126,7 +129,7 @@ On Success
          “token”: “jwtTokenHere”
      }]
 }
-```
+```
 #### Endpoint: POST /articles
 
 ```
@@ -145,7 +148,6 @@ On Success
      }]
 }
 ```
-
 #### Endpoint: GET /articles
 
 ```
@@ -174,7 +176,6 @@ On Success
      }]
 }
 ```
-
 #### Endpoint: GET /articles/<article-id>
 
 ```
@@ -222,9 +223,6 @@ On Success
      }]
 }
 ```
-
-
-
 #### Endpoint: GET /articles/review/pending
 
 ```
@@ -315,10 +313,6 @@ On Success
      }]
 }
 ```
-
-
-
-
 #### Endpoint: POST /category
 
 ```
@@ -408,7 +402,6 @@ On Success
      }]
 }
 ```
-
 #### Endpoint: GET /badwords
 
 ```
