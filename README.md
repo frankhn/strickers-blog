@@ -1,6 +1,6 @@
 # strickers-blog
 
-[![Build Status](https://travis-ci.org/frankhn/strickers-blog.svg?branch=develop)](https://travis-ci.org/frankhn/strickers-blog) 
+[![Build Status](https://travis-ci.org/frankhn/strickers-blog.svg?branch=develop)](https://travis-ci.org/frankhn/strickers-blog) [![Coverage Status](https://coveralls.io/repos/github/frankhn/strickers-blog/badge.svg)](https://coveralls.io/github/frankhn/strickers-blog) [![Maintainability](https://api.codeclimate.com/v1/badges/f089be41b5848c36fded/maintainability)](https://codeclimate.com/github/frankhn/strickers-blog/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/f089be41b5848c36fded/test_coverage)](https://codeclimate.com/github/frankhn/strickers-blog/test_coverage)
 
 ## Purpose
 
@@ -104,10 +104,11 @@ On Success
      data: [{ … }]
 }
 ```
-#### API Endpoint Specification
-```
-Endpoint: POST /auth/signup
+## API Endpoint Specification
 
+#### Endpoint: POST /auth/signup
+
+```
 {
      “status”: 200,
      data: [{
@@ -115,9 +116,10 @@ Endpoint: POST /auth/signup
          “User”: { … }
      }]
 }
+```
+#### Endpoint: POST /auth/login
 
-Endpoint: POST /auth/login
-
+```
 {
      “status”: 200,
      data: [{
