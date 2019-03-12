@@ -22,6 +22,7 @@
   "dependencies": {
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
+    "pg": "^7.8.2",
     "sequelize": "^4.43.0"
   },
   "devDependencies": {
