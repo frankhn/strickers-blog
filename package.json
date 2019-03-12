@@ -21,7 +21,8 @@
   "homepage": "https://github.com/frankhn/strickers-blog#readme",
   "dependencies": {
     "body-parser": "^1.18.3",
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "sequelize": "^4.43.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
