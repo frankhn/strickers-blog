@@ -4,7 +4,7 @@
   "description": "strickers blog post app",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon --exec babel-node ./index.js ",
+    "start": "babel-node ./index.js ",
     "dev": "nodemon --exec babel-node ./index.js ",
     "test": "nyc --reporter=html --reporter=text mocha --require babel-polyfill --require babel-register ./src/tests/tests.js --exit",
     "coverage": "nyc report --reporter=text-lcov | coveralls"
