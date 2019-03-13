@@ -6,7 +6,7 @@
   "scripts": {
     "start": "babel-node ./index.js ",
     "dev": "nodemon --exec babel-node ./index.js ",
-    "test": "NODE_ENV=test nyc --reporter=html --reporter=text mocha --require babel-polyfill --require babel-register ./src/tests/*.js --exit",
+    "test": "NODE_ENV=test nyc --reporter=html --reporter=text mocha --require @babel/polyfill --require @babel/register ./src/tests/*.js --exit",
     "coverage": "nyc report --reporter=text-lcov | coveralls"
   },
   "repository": {
@@ -32,9 +32,9 @@
     "@babel/cli": "^7.2.3",
     "@babel/core": "^7.3.4",
     "@babel/node": "^7.2.2",
+    "@babel/polyfill": "^7.2.5",
     "@babel/preset-env": "^7.3.4",
-    "babel-polyfill": "^6.26.0",
-    "babel-register": "^6.26.0",
+    "@babel/register": "^7.0.0",
     "chai": "^4.2.0",
     "coveralls": "^3.0.3",
     "eslint": "^5.15.1",
