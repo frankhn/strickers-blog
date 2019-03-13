@@ -1,18 +1,23 @@
 import Sequelize from 'sequelize';
-import config from 'config';
 import dotenv from 'dotenv';
 import debug from 'debug';
 
 dotenv.config();
+let dbname;
+if (process.env.NODE_ENV === 'test') {
+  dbname = process.env.TESTDBNAME;
+} else {
+  dbname = process.env.DBNAME;
+}
 const debugLogger = debug('app:*');
 
 // create database connection using sequelize class
 const sequelize = new Sequelize({
-  username: config.get('username'),
-  host: config.get('hostname'),
-  database: config.get('database-name'),
+  username: process.env.DBUSERNAME,
+  host: process.env.DBHOST,
+  database: dbname,
   password: process.env.DBPASSWORD,
-  dialect: config.get('dialect'),
+  dialect: 'postgres',
   define: {
     timestamps: false
   },

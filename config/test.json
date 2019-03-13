@@ -1,7 +1,0 @@
-{
-  "database-name":"strickers_blog_test",
-  "username":"strickers_blog",
-  "hostname":"localhost",
-  "dialect":"postgres",
-  "port":5432
-}

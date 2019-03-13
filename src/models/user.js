@@ -1,5 +1,7 @@
 import Sequelize from 'sequelize';
-import sequelize from '../../config/db-config';
+import sequelize from '../config/db-config';
+import debug from 'debug';
+const dbLog = debug('app:db');
 
 // create user model
 
@@ -51,5 +53,10 @@ const User = sequelize.define('user', {
     defaultValue: false
   } 
 });
-
+User.sync({force: false }).then((userModel) => {
+  dbLog(`User table is created`)
+})
+.catch((error) => {
+  dbLog(`Failled to create user table : ${error}`);
+});
 export default User;
