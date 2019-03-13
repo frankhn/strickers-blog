@@ -12,7 +12,17 @@ const sequelize = new Sequelize({
   host: config.get('hostname'),
   database: config.get('database-name'),
   password: process.env.DBPASSWORD,
-  dialect: config.get('dialect')
+  dialect: config.get('dialect'),
+  define: {
+    timestamps: false
+  },
+  operatorsAliases: false,
+  pool: {
+    max: 5,
+    min: 0,
+    acquire: 30000,
+    idle: 10000
+  }
 
 });
 
