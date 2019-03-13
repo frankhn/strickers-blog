@@ -4,5 +4,52 @@ import sequelize from '../../config/db-config';
 // create user model
 
 const User = sequelize.define('user', {
-
+  id : {
+    type: Sequelize.INTEGER,
+    autoIncrement: true,
+    primaryKey: true
+  },
+  firstname: {
+    type: Sequelize.STRING(50),
+    required: true
+  } ,
+  lastname: {
+    type: Sequelize.STRING(50),
+    required: true
+  } ,
+  gender: {
+    type: Sequelize.STRING(6),
+    required: true
+  } ,
+  dob: {
+    type: Sequelize.DATE,
+    required: true
+  } ,
+  email: {
+    type: Sequelize.STRING(125),
+    required: true
+  } ,
+  password: {
+    type: Sequelize.STRING,
+    required: true
+  } ,
+  joiningdate: {
+    type: Sequelize.DATETIME,
+    required: true,
+    defaultValue: new Date() 
+  } ,
+  usertype: {
+    type: Sequelize.STRING(50),
+    required: true
+  } ,
+  trustedbadge: {
+    type: Sequelize.BOOLEAN
+  },
+  deleted: {
+    type: Sequelize.BOOLEAN,
+    required: true,
+    defaultValue: false
+  } 
 });
+
+export default User;
