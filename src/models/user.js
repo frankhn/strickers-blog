@@ -34,7 +34,7 @@ const User = sequelize.define('user', {
     required: true
   } ,
   joiningdate: {
-    type: Sequelize.DATETIME,
+    type: Sequelize.DATE,
     required: true,
     defaultValue: new Date() 
   } ,
