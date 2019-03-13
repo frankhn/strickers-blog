@@ -1,6 +1,6 @@
 import mocha from 'mocha';
 import chai from 'chai';
-import 'babel-polyfill';
+import '@babel/polyfill';
 import sequelize from '../config/db-config';
 
 chai.should();
