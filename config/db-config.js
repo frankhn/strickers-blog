@@ -7,7 +7,7 @@ dotenv.config();
 const debugLogger = debug('app:*');
 
 // create database connection using sequelize class
-export const sequelize = new Sequelize({
+const sequelize = new Sequelize({
   username: config.get('username'),
   host: config.get('hostname'),
   database: config.get('database-name'),
@@ -21,3 +21,5 @@ export const sequelize = new Sequelize({
 sequelize.authenticate()
 .then(() => debugLogger('Connection is established'))
 .catch((error) => debugLogger(`Failled to connect to the database  : ${error}`));
+
+export default sequelize;
