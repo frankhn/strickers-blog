@@ -1,6 +1,8 @@
 import Sequelize from 'sequelize';
 import sequelize from '../config/db-config';
 import debug from 'debug';
+import Article from './article';
+
 const dbLog = debug('app:db');
 
 // create user model

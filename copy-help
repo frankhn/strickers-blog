@@ -1,0 +1,3 @@
+agelimit (integer)
+reviewed (boolean)
+deleted (boolean)
