@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "strickers_blog",
+    "password": "simple",
+    "database": "strickers_blog",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "strickers_blog",
+    "password": "simple",
+    "database": "strickers_blog_test",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "strickers_blog",
+    "password": "simple",
+    "database": "database_production",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  }
+}

@@ -16,25 +16,9 @@ const Article = sequelize.define('user', {
     type: Sequelize.STRING,
     required: true
   } ,
-  user: {
-    type: Sequelize.STRING,
-    required: true,
-    references: {
-      model: 'user',
-      key: 'id'
-    }
-  } ,
   date: {
     type: Sequelize.DATE,
     required: true
-  } ,
-  category: {
-    type: Sequelize.INTEGER,
-    required: true,
-    references: {
-      model: 'category',
-      key: 'id'
-    }
   } ,
   tags: {
     type: Sequelize.ARRAY(Sequelize.STRING),
@@ -58,11 +42,5 @@ const Article = sequelize.define('user', {
     required: true,
     defaultValue: false
   } 
-});
-Article.sync({force: false }).then((articleModel) => {
-  dbLog(`Article table is created`)
-})
-.catch((error) => {
-  dbLog(`Failled to create Article table : ${error}`);
 });
 export default Article;
