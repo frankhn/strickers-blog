@@ -1,7 +1,11 @@
 import express from 'express';
-import signup from '../controllers/signup'
+import article from './article';
+import signup from '../controllers/signup';
 
-const router = express.Router();
+const router = express();
+
+
+router.use('/article', article);
 
 
 router.post('/auth/signup', signup);
