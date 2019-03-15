@@ -9,7 +9,7 @@ if (process.env.NODE_ENV === 'test') {
 } else {
   dbname = process.env.DBNAME;
 }
-const debugLogger = debug('app:*');
+const debugLogger = debug('app:db');
 
 // create database connection using sequelize class
 const sequelize = new Sequelize({
@@ -19,22 +19,22 @@ const sequelize = new Sequelize({
   password: process.env.DBPASSWORD,
   dialect: 'postgres',
   define: {
-    timestamps: false
+    timestamps: false,
   },
   operatorsAliases: false,
   pool: {
     max: 5,
     min: 0,
     acquire: 30000,
-    idle: 10000
-  }
+    idle: 10000,
+  },
 
 });
 
 // test database connection
 
 sequelize.authenticate()
-.then(() => debugLogger('Connection is established'))
-.catch((error) => debugLogger(`Failled to connect to the database  : ${error}`));
+  .then(() => debugLogger('Connection is established'))
+  .catch(error => debugLogger(`Failed to connect to the database  : ${error}`));
 
 export default sequelize;

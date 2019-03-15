@@ -1,6 +1,7 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import routes from './src/routes/routes';
+import badWordRouter from './src/routes/bad-word';
 
 
 const app = express();
@@ -11,6 +12,7 @@ app.use(bodyParser.json());
 const port = process.env.PORT || 3000;
 
 app.use('/', routes);
+app.use('/bad-word', badWordRouter);
 
 app.listen(port, () => {
   console.log('server started successfully...');

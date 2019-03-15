@@ -1,62 +1,63 @@
 import Sequelize from 'sequelize';
-import sequelize from '../config/db-config';
 import debug from 'debug';
+import sequelize from '../config/db-config';
+
 const dbLog = debug('app:db');
 
 // create user model
 
 const User = sequelize.define('user', {
-  id : {
+  id: {
     type: Sequelize.INTEGER,
     autoIncrement: true,
-    primaryKey: true
+    primaryKey: true,
   },
   firstname: {
     type: Sequelize.STRING(50),
-    required: true
-  } ,
+    required: true,
+  },
   lastname: {
     type: Sequelize.STRING(50),
-    required: true
-  } ,
+    required: true,
+  },
   gender: {
     type: Sequelize.STRING(6),
-    required: true
-  } ,
+    required: true,
+  },
   dob: {
     type: Sequelize.DATE,
-    required: true
-  } ,
+    required: true,
+  },
   email: {
     type: Sequelize.STRING(125),
-    required: true
-  } ,
+    required: true,
+  },
   password: {
     type: Sequelize.STRING,
-    required: true
-  } ,
+    required: true,
+  },
   joiningdate: {
     type: Sequelize.DATE,
     required: true,
-    defaultValue: new Date() 
-  } ,
+    defaultValue: new Date(),
+  },
   usertype: {
     type: Sequelize.STRING(50),
-    required: true
-  } ,
+    required: true,
+  },
   trustedbadge: {
-    type: Sequelize.BOOLEAN
+    type: Sequelize.BOOLEAN,
   },
   deleted: {
     type: Sequelize.BOOLEAN,
     required: true,
-    defaultValue: false
-  } 
+    defaultValue: false,
+  },
 });
-User.sync({force: false }).then((userModel) => {
-  dbLog(`User table is created`)
+User.sync({ force: false }).then((userModel) => {
+  dbLog('User table is created');
 })
-.catch((error) => {
-  dbLog(`Failled to create user table : ${error}`);
-});
+  .catch((error) => {
+    dbLog(`Failled to create user table : ${error}`);
+  });
 export default User;
