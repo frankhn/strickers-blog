@@ -23,7 +23,7 @@ const User = sequelize.define('user', {
   username:{
     type: Sequelize.STRING(10),
     required: true,
-    unique: true
+    unique: true,
     required: true,
   },
   gender: {
@@ -38,7 +38,6 @@ const User = sequelize.define('user', {
     type: Sequelize.STRING(125),
     required: true,
     unique: true
-  } ,
   },
   password: {
     type: Sequelize.STRING,
@@ -55,7 +54,7 @@ const User = sequelize.define('user', {
   } ,
   trustedbadge: {
     type: Sequelize.BOOLEAN,
-    defaultValue: false
+    defaultValue: false,
     required: true,
   },
   trustedbadge: {
@@ -69,11 +68,4 @@ const User = sequelize.define('user', {
 });
 User.sync({force: false })
 
-export default User;
-User.sync({ force: false }).then((userModel) => {
-  dbLog('User table is created');
-})
-  .catch((error) => {
-    dbLog(`Failled to create user table : ${error}`);
-  });
 export default User;
