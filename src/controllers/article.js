@@ -67,7 +67,10 @@ const Articles = {
        * @returns {object} Article object
        */
   async getArticles(req, res) {
-    return res.status(201).send({ status: 200, data: 'LIST COMING SOON' });
+    Articledb.findAll().then((allArticles) => {
+      res.status(200).json({ status: 200, data: allArticles });
+    })
+      .catch(error => res.status(500).json({ status: 500, error: `Server error ${error}` }));
   },
 };
 
