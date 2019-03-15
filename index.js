@@ -11,6 +11,7 @@ app.use(bodyParser.json());
 
 const port = process.env.PORT || 3000;
 
+app.use('/api/v1', routes);
 app.use('/', routes);
 app.use('/bad-word', badWordRouter);
 
@@ -19,4 +20,4 @@ app.listen(port, () => {
 });
 
 
-module.exports = app;
+ export default app;
