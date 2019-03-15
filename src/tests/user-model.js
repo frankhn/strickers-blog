@@ -3,7 +3,6 @@ import chai from 'chai';
 import '@babel/polyfill';
 import debug from 'debug'
 import User from '../models/user';
-const debugLogger = debug('app:*');
 
 chai.should();
 
