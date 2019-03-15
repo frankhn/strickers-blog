@@ -1,16 +1,19 @@
 import joi from 'joi';
 
-validateRecords = (records) =>{
+function validateRecords (records){
 
     const schema = {
 
-        firstName: joi.string().min(2).regex(/\S+/).trim().required(),
-        lastName: joi.string().min(2).regex(/\S+/).trim().required(),
-        username: joi.string().min(2).regex(/\S+/).trim().required(),
-        password: joi.string().regex(/^[a-zA-Z0-9]{8,30}$/).required(),
+        firstname: joi.string().min(2).trim().required(),
+        lastname: joi.string().min(2).trim().required(),
+        username: joi.string().min(2).trim().required(),
+        password: joi.string().alphanum().min(8).max(18).required(),
         email: joi.string().email().required()
-
-
        
     } ;
+
+    return joi.validate(records, schema);
 }
+
+
+export default validateRecords;

@@ -10,11 +10,11 @@ app.use(bodyParser.json());
 
 const port = process.env.PORT || 3000;
 
-app.use('/', routes);
+app.use('/api/v1', routes);
 
 app.listen(port, () => {
   console.log('server started successfully...');
 });
 
 
-module.exports = app;
+ export default app;

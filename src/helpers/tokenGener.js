@@ -7,7 +7,7 @@ module.exports={
         jwt.sign(payload,process.env.secret,{expiresIn:'1d'},(err,token)=>{
             if(err){
                 return res.send({
-                    status:"TOKEN ERROR",
+                    status:400,
                     error:err
                 })
             }

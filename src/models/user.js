@@ -19,6 +19,11 @@ const User = sequelize.define('user', {
     type: Sequelize.STRING(50),
     required: true
   } ,
+  username:{
+    type: Sequelize.STRING(10),
+    required: true,
+    unique: true
+  },
   gender: {
     type: Sequelize.STRING(6),
     required: true
@@ -29,7 +34,8 @@ const User = sequelize.define('user', {
   } ,
   email: {
     type: Sequelize.STRING(125),
-    required: true
+    required: true,
+    unique: true
   } ,
   password: {
     type: Sequelize.STRING,
@@ -42,10 +48,11 @@ const User = sequelize.define('user', {
   } ,
   usertype: {
     type: Sequelize.STRING(50),
-    required: true
+    defaultValue: false
   } ,
   trustedbadge: {
-    type: Sequelize.BOOLEAN
+    type: Sequelize.BOOLEAN,
+    defaultValue: false
   },
   deleted: {
     type: Sequelize.BOOLEAN,
@@ -53,10 +60,6 @@ const User = sequelize.define('user', {
     defaultValue: false
   } 
 });
-User.sync({force: false }).then((userModel) => {
-  dbLog(`User table is created`)
-})
-.catch((error) => {
-  dbLog(`Failled to create user table : ${error}`);
-});
+User.sync({force: false })
+
 export default User;

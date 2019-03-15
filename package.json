@@ -38,6 +38,7 @@
     "@babel/preset-env": "^7.3.4",
     "@babel/register": "^7.0.0",
     "chai": "^4.2.0",
+    "chai-http": "^4.2.1",
     "coveralls": "^3.0.3",
     "eslint": "^5.15.1",
     "eslint-config-airbnb": "^17.1.0",
