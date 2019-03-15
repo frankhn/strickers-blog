@@ -1,6 +1,7 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import routes from './src/routes/routes';
+import commentRoutes from './src/routes/comment';
 
 
 const app = express();
@@ -11,6 +12,7 @@ app.use(bodyParser.json());
 const port = process.env.PORT || 3000;
 
 app.use('/', routes);
+app.use('/comment', commentRoutes);
 
 app.listen(port, () => {
   console.log('server started successfully...');
